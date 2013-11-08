@@ -1,6 +1,6 @@
 ﻿
 function cleanUpConfigFiles(){
-	Get-ChildItem -recurse .\ | ? { $_.Name -match '^\w+\.\w+\.config'}
+	Get-ChildItem -recurse .\ | ? { $_.Name -match '^\w+\.\w+\.config'} | foreach-object {Remove-Item $_.FullName}
 }
 
 function replaceImage(){
